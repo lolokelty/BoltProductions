@@ -1,0 +1,504 @@
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header h1, .nav-menu a, .slogan {
+    color: black; /* This changes the text color to black */
+  }
+
+  .header {
+    background: url('/pictures/Home.png') no-repeat center center fixed; 
+    background-size: cover;
+    text-align: center;
+    color: white;
+    height: 92vh; /* This will make the header take up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* This will vertically center the content in the header */
+    align-items: center; /* This will horizontally center the content in the header */
+  }
+  
+  .header-logo {
+    padding-top: 50px; /* Adjust this value as per your layout */
+  }
+
+  .header-logo img {
+    width: 600px; /* Adjust this value as per your logo */
+    height: auto;
+  }
+
+  .header h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .header {
+    position: relative; /* Needed as a reference for the absolute positioning of the nav-menu */
+    /* ... other styles remain unchanged ... */
+
+  }
+  .nav-menu {
+    position: absolute;
+  bottom: 0; /* Aligns the menu to the bottom of the header */
+  left: 0; /* Aligns the menu to the left of the header */
+  width: 100%; /* Ensures the menu spans the width of the header */
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  padding: 0 0 20px 0; /* Adds padding at the bottom of the nav-menu */
+  /* ... other styles remain unchanged ... */
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    margin: 0 125px; /* Increase the left and right margins */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    /* other styles remain unchanged */
+  }
+  
+  
+  .slogan {
+    font-size: 2em;
+    font-weight: bold; /* Makes the font bolder */
+    margin-top: 0; /* Adjusts the margin to bring it closer to the header */
+    padding: 27px 0; /* Adds padding above and below the slogan */
+    background: white; /* Gives the slogan a white background to stand out */
+    color: black; /* Ensures the text is black */
+    width: 100%; /* Ensures it takes the full width */
+    text-align: center; /* Centers the text */
+  }
+  
+  @media (max-width: 768px) {
+    .nav-menu a {
+      margin: 0 8px; /* Tighter spacing for smaller screens */
+      padding: 8px 16px; /* Smaller padding for buttons */
+    }
+  
+    .header-logo img {
+      width: 325px; /* Larger logo for better visibility on mobile */
+    }
+  
+    .header h1 {
+      font-size: 20px; /* Adjusted for readability on smaller screens */
+    }
+  
+    .slogan {
+      font-size: 20px; /* Adjusts slogan text size */
+      padding: 0px 5px; /* Ensures adequate padding */
+      text-align: center; /* Guarantees text alignment */
+      width: 100%; /* Full width to support centering */
+    }
+  }
+
+  .slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto; /* Let it grow as per the content */
+    display: flex; /* Use flexbox to align side by side */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  }
+  
+  .slide {
+    width: 100%;
+    display: flex; /* Aligns the children (collectible-container) side by side */
+    flex-wrap: wrap; /* Wrap onto the next line if more than two per slide */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .collectible-container {
+    width: 50%; /* Adjust if you want more than two images per row */
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .collectible-container img {
+    max-width: 90%; /* You can lower this percentage to make images smaller */
+    height: auto;
+    margin-bottom: 20px; /* Adjust or remove the margin as necessary */
+  }
+  
+  /* You can remove the styles for .collectible-description if it's no longer needed */
+  
+  .collectible-description {
+    background: #fff; /* Light background for the text box */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-left: 5px solid orange; /* Stylish left border */
+    width: 80%; /* Percentage of its container's width */
+    margin-bottom: 20px; /* Space below the text box */
+    text-align: left; /* Aligns the text to the left within the text box */
+  }
+  
+  .collectible-description h2 {
+    margin-top: 0;
+    font-size: 1.5em; /* Larger font for the title */
+    font-weight: bold; /* Bold font weight for the title */
+  }
+  
+  .collectible-description p {
+    font-size: 1em; /* Standard font size for the description */
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: flex-start; /* Keeps buttons aligned to the left */
+    padding-left: 0; /* Adjust this value as needed, could be reduced to 0 for full alignment */
+    margin-left: -900px; /* Negative margin can shift the container further left; adjust as needed */
+    /* Remaining styles unchanged */
+  }
+  
+  .button {
+    text-decoration: none;
+    color: white; /* Button text color */
+    background-color: black; /* Button background color */
+    margin: 0 200px; /* Spacing between buttons */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners for the buttons */
+    font-weight: bold; /* Bold button text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .button:hover {
+    background-color: #333; /* Slightly darker background on hover */
+  }
+
+
+.image-container {
+    width: 100%; /* Full width of the container */
+    text-align: center; /* Center the image horizontally */
+    padding: 20px 0; /* Add some vertical padding */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: 270px; /* Maintain aspect ratio */
+    margin-top: -200px;
+    margin-right: -915px;
+  }
+
+  
+/* Global Footer Styling */
+.footer {
+  padding: 40px;
+  background-color: #f8f8f8;
+  position: relative;
+  text-align: center; /* Center content by default */
+}
+
+
+.footer-about p {
+  text-align: center; /* Center the text */
+  margin-bottom: 20px 0; /* Add some space between the About Us section and the footer */
+  font-size: 20px; /* Increase the font size */
+  font-weight: bold; /* Make the text bolder */
+  margin: 10px 0; /* Add some space between paragraphs */
+}
+
+.footer-about .footer-logo {
+  display: block; /* Make the logo block-level for centering */
+  margin: 0 auto; /* Center the logo horizontally */
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Profile Styling */
+.footer-profiles {
+  display: flex;
+  justify-content: center; /* Center profiles */
+  gap: 20px; /* Space between profiles */
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* Make the images round */
+}
+
+.profile p {
+  margin: 10px 0 0;
+}
+
+/* Social Media Icons Styling */
+.footer-social {
+  text-align: left; /* Align icons to the left in desktop view */
+}
+
+.footer-social a {
+  margin: 0 20px;
+}
+
+.footer-social img {
+  width: 40px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-social {
+    text-align: center; /* Center icons in mobile view */
+  }
+}
+
+
+/* Footer Image Styling */
+.footer-image-container {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.footer-image-container img {
+  width: 220px; /* Adjust to your preference */
+  height: auto;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+  .footer-profiles {
+    flex-direction: column;
+  }
+
+  .footer-image-container {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+
+.about-us {
+  margin-bottom: 150px;
+}
+
+.about-us h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.about-us p {
+  font-size: 18px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.profile img {
+  display: block;
+  width: 120px; /* Adjust the size as needed */
+  height: 120px;
+  object-fit: cover;
+  margin: 0 auto 10px; /* Center image and add space below */
+}
+
+.profile p {
+  font-size: 16px;
+}
+
+.social-icons {
+  margin-bottom: 50px;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the profiles */
+  }
+
+  .footer-logo img {
+    position: static;
+    margin: 0 auto; /* Center in mobile view */
+    width: 80px; /* Adjust the size as needed */
+  }
+
+}
+
+.more-text {
+  display: none;
+  /* Additional styles for the expanded text */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 20px; /* Add space between profiles */
+  max-width: 200px; /* Set a maximum width for each profile */
+  margin: 0 auto 20px; /* Centers the profile and adds space below */
+}
+
+/* The button styling */
+.read-more-btn {
+  margin-top: 10px; /* Add some space above the button */
+  align-self: center; /* Align button to the center */
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: blue;
+  padding: 5px;
+  text-decoration: underline;
+  font-size: 1em;
+}
+
+.about-us .about-title {
+  font-size: 40px; /* Larger size for the 'title' */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-us .about-body {
+  font-size: 18px; /* Smaller size for the 'body' text */
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* About Us Section Styling */
+.about-us {
+  text-align: center; /* Center all text within the About Us container */
+  padding: 20px; /* Add padding as needed */
+  padding-top: 200px; /* Add space for the divider */
+  /* other styles */
+  margin-top: -200px;
+}
+
+.about-us h2 {
+  font-size: 24px; /* Adjust if you want a different size for the title */
+  font-weight: bold;
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.about-us p {
+  font-size: 16px; /* Smaller font size for the body text */
+  margin-bottom: 10px; /* Space below each paragraph */
+  line-height: 1.4; /* Adjust line height for readability */
+}
+
+
+.profile-image img {
+  max-width: 300px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center the image */
+}
+
+@media (max-width: 768px) {
+  .footer-profiles {
+    flex-direction: column;
+    align-items: center; /* This will center the profiles and the image */
+  }
+
+  .profile,
+  .profile-image {
+    margin-bottom: 20px; /* Add space between the profiles and the image */
+  }
+
+  .profile-image img {
+    max-width: 80px; /* Adjust the size for mobile if needed */
+  }
+}
+
+
+/* Burger Menu */
+.burger-menu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+}
+
+.burger-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate burger icon to X */
+.burger-menu.active .burger-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .burger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  display: flex; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  transition: left 0.3s ease;
+}
+
+.menu-overlay.active {
+  left: 0; /* Slide in from the left */
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.menu-content a {
+  color: #fff;
+  margin: 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.menu-content a:hover {
+  color: #ddd; /* Lighten the color on hover */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex; /* Show the burger menu */
+  }
+}

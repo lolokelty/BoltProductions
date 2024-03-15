@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <div class="burger-menu">
+    <div class="burger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <div class="menu-content">
+      <a href="index.html">Home</a>
+      <!-- Add more links as needed -->
+    </div>
+  </div>
+
+  <h1>Contact Us!</h1>
+  <a href="index.html" class="home-button">Take me Home!</a>
+  <div class="info"><a href="https://www.grandvincent-marion.fr" target="_blank"><p><i class="fa fa-heart"></i></p></a></div>
+  
+  <!-- Updated Form with Action Attribute and Submit Button -->
+  <form action="https://formsubmit.co/lolokelty2000@gmail.com" method="post">
+    <h1>Should you have any questions, please do not hesitate to contact me:</h1>
+    
+    <div class="contentform">
+      <!-- Your existing form fields -->
+      <div class="form-group">
+        <p>Name <span>*</span></p>
+        <span class="icon-case"><i class="fa fa-user"></i></span>
+            <input type="text" name="prenom" id="prenom" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."/>
+            <div class="validation"></div>
+        </div>
+        <div class="form-group">
+        <p>E-mail <span>*</span></p>	
+        <span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+            <input type="email" name="email" id="email" data-rule="email" data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire."/>
+            <div class="validation"></div>
+        </div>	
+        <div class="form-group">
+          <p>Phone number <span>*</span></p>	
+          <span class="icon-case"><i class="fa fa-phone"></i></span>
+              <input type="text" name="phone" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"/>
+              <div class="validation"></div>
+          </div>
+          <div class="form-group">
+              <p>Subject <span>*</span></p>	
+              <span class="icon-case"><i class="fa fa-comment-o"></i></span>
+                  <input type="text" name="sujet" id="sujet" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné."/>
+                  <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                  <p>Message <span>*</span></p>
+                  <span class="icon-case"><i class="fa fa-comments-o"></i></span>
+                      <textarea name="message" rows="14" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Message' doit être renseigné."></textarea>
+                      <div class="validation"></div>
+                  </div>	
+      <!-- Add more form fields as needed -->
+
+      <!-- Submit Button -->
+      <button type="submit" class="bouton-contact">Send</button>
+    </div>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const burgerMenu = document.querySelector('.burger-menu');
+  const menuOverlay = document.querySelector('.menu-overlay');
+
+  burgerMenu.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+  });
+
+  // Close the menu when a link is clicked
+  document.querySelectorAll('.menu-content a').forEach(link => {
+    link.addEventListener('click', () => {
+      burgerMenu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+  });
+});
+
+</script>
+</html>
